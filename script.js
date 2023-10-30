@@ -1,0 +1,35 @@
+function userInformation(){
+    let firstName=prompt("Enter your First name: ")
+    let lastName=prompt("Enter your Last Name: ")
+    let Inputcountry=prompt("Enter your Country: ")
+    let phoneNumber=prompt("Enter your Phone Number: ")
+    let Ipstate=prompt("Enter your State: ")
+    let IpCity=prompt("Enter your City: ")
+    let IpVillage=prompt("Enter your Village: ")
+
+    localStorage.setItem("FirstName",firstName)
+    localStorage.setItem("LastName",lastName)
+    localStorage.setItem("Country",Inputcountry)
+    localStorage.setItem("PhoneNum",phoneNumber)
+    localStorage.setItem("State",Ipstate)
+    localStorage.setItem("City",IpCity)
+    localStorage.setItem("Village",IpVillage)
+
+    let fname=document.querySelector("#fname")
+    let lname=document.querySelector("#lname")
+    let country=document.querySelector("#country")
+    let phnNum=document.querySelector("#phnNum")
+    let state=document.querySelector("#state")
+    let city=document.querySelector("#city")
+    let village=document.querySelector("#village")
+
+    console.log(fname);
+    fname.value= localStorage.getItem("FirstName")
+    lname.value= localStorage.getItem("LastName")
+    country.value=localStorage.getItem("Country")
+    phnNum.value=localStorage.getItem("PhoneNum")
+    state.value=localStorage.getItem("State")
+    city.value=localStorage.getItem("City")
+    village.value=localStorage.getItem("Village")
+}
+userInformation()
