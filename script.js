@@ -1,35 +1,65 @@
-function userInformation(){
-    let firstName=prompt("Enter your First name: ")
-    let lastName=prompt("Enter your Last Name: ")
-    let Inputcountry=prompt("Enter your Country: ")
-    let phoneNumber=prompt("Enter your Phone Number: ")
-    let Ipstate=prompt("Enter your State: ")
-    let IpCity=prompt("Enter your City: ")
-    let IpVillage=prompt("Enter your Village: ")
+let firstName=""
+let lastName=""
+let country=""
+let phnNum=""
+let state=""
+let city=""
+let village=""
 
-    localStorage.setItem("FirstName",firstName)
-    localStorage.setItem("LastName",lastName)
-    localStorage.setItem("Country",Inputcountry)
-    localStorage.setItem("PhoneNum",phoneNumber)
-    localStorage.setItem("State",Ipstate)
-    localStorage.setItem("City",IpCity)
-    localStorage.setItem("Village",IpVillage)
+function getData(){
+    firstName=prompt("Enter First Name:");
+    localStorage.setItem("firstName",firstName)
 
-    let fname=document.querySelector("#fname")
-    let lname=document.querySelector("#lname")
-    let country=document.querySelector("#country")
-    let phnNum=document.querySelector("#phnNum")
-    let state=document.querySelector("#state")
-    let city=document.querySelector("#city")
-    let village=document.querySelector("#village")
+    lastName=prompt("Enter Last Name:");
+    localStorage.setItem("lastName",lastName)
 
-    console.log(fname);
-    fname.value= localStorage.getItem("FirstName")
-    lname.value= localStorage.getItem("LastName")
-    country.value=localStorage.getItem("Country")
-    phnNum.value=localStorage.getItem("PhoneNum")
-    state.value=localStorage.getItem("State")
-    city.value=localStorage.getItem("City")
-    village.value=localStorage.getItem("Village")
+    country=prompt("Enter Country Name:");
+    localStorage.setItem("country",country)
+
+    phnNum=prompt("Enter Phone Number:");
+    localStorage.setItem("phn",phnNum)
+
+    state=prompt("Enter State:");
+    localStorage.setItem("state",state)
+
+    city=prompt("Enter City:");
+    localStorage.setItem("city",city)
+
+    village=prompt("Enter Village:");
+    localStorage.setItem("village",village)
+    setData()
 }
-userInformation()
+
+
+function setData(){
+
+    document.querySelector("#fname").value=localStorage.getItem("firstName");
+    document.querySelector("#lname").value=localStorage.getItem("lastName");
+    document.querySelector("#country").value=localStorage.getItem("country");
+    document.querySelector("#phnNum").value=localStorage.getItem("phn");
+    document.querySelector("#state").value=localStorage.getItem("state");
+    document.querySelector("#city").value=localStorage.getItem("city");
+    document.querySelector("#village").value=localStorage.getItem("village");
+    
+}
+
+
+if(localStorage.length==0){
+    getData();
+}else{
+    setData()
+}
+
+let container=document.querySelector(".container")
+let modes=document.querySelector("button")
+modes.innerText="Dark"
+modes.addEventListener("click",()=>{
+    if(modes.innerText=="Dark"){
+        modes.innerText="Light"
+        document.body.style.background="#a291eb"
+    }
+    else{
+        modes.innerText="Dark"
+        document.body.style.background="#210d7b"
+    }
+})

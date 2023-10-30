@@ -8,21 +8,57 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: #210d7b;
+    font-family: Arial, sans-serif;
 }
 .container{
     height: 300px;
     width: 400px;
-    border: 1px solid black;
     border-radius: 5px;
     padding: 40px; 
     gap: 10px;   
+    background: white;
+    box-shadow: 1px 1px 9px 7px rgba(255, 255, 255, 0.4);
 }
+
 table{
     margin-top: 20px;
 }
 label{
     font-style: bold;
+    font-weight: 700;
+    font-size: 16px;
+    color: #444;;
+}
+input{
+    border: none;
+    font-size: 18px;
+    color: #000000;
 }
 .container h2{
     text-align: center;
+}
+
+button{
+    float: right;
+    height: 30px;
+    width: 70px;
+    margin: auto;
+    display: block;
+    background-color: #210d7b;
+
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+    transform: translateY(1.2);
+}
+h2{
+    border-bottom: 2px solid rgb(92, 32, 189);
+    border-bottom: 2px solid rgb(39, 16, 77);
+
 }
